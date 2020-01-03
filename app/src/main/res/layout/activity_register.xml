@@ -62,7 +62,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:layout_weight="1"
-            android:background="@color/colorAccent"
+            android:background="@color/colorOrange"
             android:text="@string/register" />
 
         <TextView
