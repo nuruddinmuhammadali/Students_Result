@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter<Note>{
 
+    
     private ArrayList<Note> dataSet;
     Context mContext;
     private int lastPosition = -1;
