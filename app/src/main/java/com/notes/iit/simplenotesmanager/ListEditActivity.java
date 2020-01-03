@@ -20,6 +20,7 @@ public class ListEditActivity extends AppCompatActivity {
     EditText name,description;
     TextView dateModified;
     TextView characterCount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

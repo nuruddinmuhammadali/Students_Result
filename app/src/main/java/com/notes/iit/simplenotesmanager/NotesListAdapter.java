@@ -25,13 +25,13 @@ public class NotesListAdapter extends CursorAdapter {
         TextView date = (TextView) view.findViewById(R.id.datetime);
         String description = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_DESCRIPTION));
         String datetime=cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_MODIFIEDDATE));
-        String noteTitle=description.split("\n")[0];
+        String noteTitle= cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_NAME));
         String notePreview="";
         if(description.contains("\n")) {
             notePreview = description.split("\n")[1];
         }
         title.setText(noteTitle);
-        preview.setText(notePreview);
+        preview.setText(description);
         date.setText(datetime);
     }
 }

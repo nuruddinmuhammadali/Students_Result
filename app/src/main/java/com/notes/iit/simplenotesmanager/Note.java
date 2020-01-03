@@ -8,6 +8,7 @@ public class Note {
     public String description;
     public String date;
 
+
     public Note(String name, String description, String date) {
         this.name = name;
         this.description = description;

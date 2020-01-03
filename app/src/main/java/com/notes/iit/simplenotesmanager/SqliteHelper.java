@@ -77,6 +77,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(KEY_NAME, note.name);
+
         values.put(KEY_DESCRIPTION, note.description);
         values.put(KEY_MODIFIEDDATE, note.date);
         db.insert(TABLE_NOTES, null, values);
