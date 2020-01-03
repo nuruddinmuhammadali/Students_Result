@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -68,6 +69,9 @@ public class ListEditActivity extends AppCompatActivity {
                 Note note=new Note(name.getText().toString(),description.getText().toString(),currentDateTime);
                 sqliteHelper.addNote(note);
                 dateModified.setText(currentDateTime);
+                String welcome = getString(R.string.noteSaved);// + model.getDisplayName();
+                // TODO : initiate successful logged in experience
+                Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

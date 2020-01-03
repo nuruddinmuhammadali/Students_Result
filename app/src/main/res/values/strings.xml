@@ -10,5 +10,6 @@
     <string name="back_to_notes_list">Back to Notes List</string>
     <string name="add_notes">Add Notes</string>
     <string name="profile_update">Update Profile</string>
-    <string name="save">Save</string>
+    <string name="save">Save Note</string>
+    <string name="noteSaved">The Note Saved Successfully.</string>
 </resources>
