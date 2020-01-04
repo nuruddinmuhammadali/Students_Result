@@ -66,8 +66,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
             + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + KEY_NAME + " TEXT, "+ KEY_ROLL + " TEXT, "
             + KEY_EXAM + " TEXT, "+ KEY_YEAR + " INTEGER, "
-            + KEY_GPA + " TEXT, "+ KEY_POSITION + " TEXT, "
-            + KEY_POSITION + " TEXT "
+            + KEY_GPA + " TEXT, "+ KEY_POSITION + " TEXT "
             + " ) ";
 
     public SqliteHelper(Context context) {
@@ -78,7 +77,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(SQL_TABLE_USERS);
         sqLiteDatabase.execSQL(SQL_TABLE_STUDENTS);
-       // sqLiteDatabase.execSQL(SQL_TABLE_RESULTS);
+        sqLiteDatabase.execSQL(SQL_TABLE_RESULTS);
 
     }
 
@@ -118,10 +117,10 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
         values.put(KEY_NAME, results.name);
         values.put(KEY_ROLL, results.roll);
-        values.put(KEY_CLASS, results.exam);
-        values.put(KEY_BATCH, results.year);
-        values.put(KEY_DEPARTMENT, results.cgpa);
-        values.put(KEY_ADDRESS, results.position);
+        values.put(KEY_EXAM, results.exam);
+        values.put(KEY_YEAR, results.year);
+        values.put(KEY_GPA, results.cgpa);
+        values.put(KEY_POSITION, results.position);
         db.insert(TABLE_RESULTS, null, values);
     }
 
@@ -172,7 +171,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
 
     public boolean isEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USERS,// Selecting Table
+        Cursor cursor = db.query(TABLE_USERS, // Selecting Table
                 null,
                 KEY_EMAIL + "=?",
                 new String[]{email},
