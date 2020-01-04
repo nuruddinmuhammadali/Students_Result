@@ -1,4 +1,4 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.notes.iit.result.R;
 
 
 public class RegisterActivity extends AppCompatActivity {

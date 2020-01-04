@@ -1,4 +1,4 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,14 +11,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.notes.iit.result.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ListEditActivity extends AppCompatActivity {
     private SqliteHelper sqliteHelper;
-    EditText name,description;
+    EditText name,roll,clas,batch,dept,address;
     TextView dateModified;
     TextView characterCount;
 
@@ -39,17 +39,25 @@ public class ListEditActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         };
-        description.addTextChangedListener(mTextEditorWatcher);
+//        name.addTextChangedListener(mTextEditorWatcher);
+//        roll.addTextChangedListener(mTextEditorWatcher);
+//        batch.addTextChangedListener(mTextEditorWatcher);
+//        dept.addTextChangedListener(mTextEditorWatcher);
+//        clas.addTextChangedListener(mTextEditorWatcher);
+//        dept.addTextChangedListener(mTextEditorWatcher);
+//        address.addTextChangedListener(mTextEditorWatcher);
     }
 
     private void initializeViews() {
         name=(EditText)findViewById(R.id.name);
-        description=(EditText)findViewById(R.id.description);
-        dateModified=(TextView)findViewById(R.id.date);
-        characterCount=(TextView)findViewById(R.id.characterCount);
+        roll=(EditText)findViewById(R.id.roll);
+        clas=(EditText)findViewById(R.id.clas);
+        batch=(EditText)findViewById(R.id.batch);
+        dept=(EditText)findViewById(R.id.dept);
+        address=(EditText)findViewById(R.id.adress);
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
         String currentDateTime=simpleDateFormat.format(new Date());
-        dateModified.setText(currentDateTime);
+       // dateModified.setText(currentDateTime);
     }
 
     @Override
@@ -66,9 +74,10 @@ public class ListEditActivity extends AppCompatActivity {
                 Date date=new Date();
                 SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
                 String currentDateTime=simpleDateFormat.format(date);
-                Note note=new Note(name.getText().toString(),description.getText().toString(),currentDateTime);
-                sqliteHelper.addNote(note);
-                dateModified.setText(currentDateTime);
+                Student student=new
+                        Student(name.getText().toString(),roll.getText().toString(),clas.getText().toString(),batch.getText().toString(),dept.getText().toString(),address.getText().toString());
+                sqliteHelper.addStudent(student);
+//                dateModified.setText(currentDateTime);
                 String welcome = getString(R.string.noteSaved);// + model.getDisplayName();
                 // TODO : initiate successful logged in experience
                 Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();

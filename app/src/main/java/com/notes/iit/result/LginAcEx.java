@@ -1,4 +1,4 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class LoginActivity extends AppCompatActivity {
+import com.notes.iit.result.R;
+
+public class LginAcEx extends AppCompatActivity {
 
     //Declaration EditTexts
     EditText editTextEmail;
@@ -31,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.acex_lgin);
         sqliteHelper = new SqliteHelper(this);
         initCreateAccountTextView();
         initViews();
@@ -49,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (currentUser != null) {
                         Snackbar.make(buttonLogin, "Successfully Logged in!", Snackbar.LENGTH_LONG).show();
-                        Intent intent=new Intent(LoginActivity.this,NotesListActivity.class);
+                        Intent intent=new Intent(LginAcEx.this, StudentsList.class);
                         startActivity(intent);
                     } else {
                         Snackbar.make(buttonLogin, "Failed to log in , please try again", Snackbar.LENGTH_LONG).show();
@@ -73,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         textViewCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LginAcEx.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });

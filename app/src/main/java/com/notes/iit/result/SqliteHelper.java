@@ -1,12 +1,10 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import java.text.SimpleDateFormat;
 
 /**
  * Created by amardeep on 10/26/2017.
@@ -15,13 +13,13 @@ import java.text.SimpleDateFormat;
 public class SqliteHelper extends SQLiteOpenHelper {
 
     //DATABASE NAME
-    public static final String DATABASE_NAME = "note";
+    public static final String DATABASE_NAME = "studentdb";
 
     //DATABASE VERSION
     public static final int DATABASE_VERSION = 1;
 
     //TABLE NAME
-    public static final String TABLE_USERS = "user";
+    public static final String TABLE_USERS = "users";
 
     //TABLE USERS COLUMNS
     //ID COLUMN @primaryKey
@@ -43,15 +41,33 @@ public class SqliteHelper extends SQLiteOpenHelper {
             + KEY_EMAIL + " TEXT, "
             + KEY_PASSWORD + " TEXT"
             + " ) ";
-    public static final String TABLE_NOTES ="note" ;
+    //SQL for creating students table
+    public static final String TABLE_STUDENTS ="student" ;
     public static final String KEY_NAME ="name" ;
-    public static final String KEY_DESCRIPTION ="description" ;
-    public static final String KEY_MODIFIEDDATE ="date" ;
-    public static final String SQL_TABLE_NOTES = " CREATE TABLE " + TABLE_NOTES
+    public static final String KEY_ROLL ="roll" ;
+    public static final String KEY_CLASS ="clas" ;
+    public static final String KEY_BATCH ="batch" ;
+    public static final String KEY_DEPARTMENT ="dept" ;
+    public static final String KEY_ADDRESS ="address" ;
+    public static final String SQL_TABLE_STUDENTS = " CREATE TABLE " + TABLE_STUDENTS
             + " ( "
             + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + KEY_NAME + " TEXT, "+ KEY_DESCRIPTION + " TEXT, "
-            + KEY_MODIFIEDDATE + " STRING"
+            + KEY_NAME + " TEXT, "+ KEY_ROLL + " TEXT, "+ KEY_CLASS + " TEXT, "+ KEY_BATCH + " TEXT, "
+            + KEY_DEPARTMENT + " TEXT, "+ KEY_ADDRESS + " TEXT "
+            + " ) ";
+    //SQL for creating results table
+    public static final String TABLE_RESULTS ="results" ;
+    public static final String KEY_EXAM ="exam" ;
+    public static final String KEY_YEAR ="year" ;
+    public static final String KEY_GPA ="cgpa" ;
+    public static final String KEY_POSITION ="position" ;
+    public static final String SQL_TABLE_RESULTS  = " CREATE TABLE " + TABLE_RESULTS
+            + " ( "
+            + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + KEY_NAME + " TEXT, "+ KEY_ROLL + " TEXT, "
+            + KEY_EXAM + " TEXT, "+ KEY_YEAR + " INTEGER, "
+            + KEY_GPA + " TEXT, "+ KEY_POSITION + " TEXT, "
+            + KEY_POSITION + " TEXT "
             + " ) ";
 
     public SqliteHelper(Context context) {
@@ -61,7 +77,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(SQL_TABLE_USERS);
-        sqLiteDatabase.execSQL(SQL_TABLE_NOTES);
+        sqLiteDatabase.execSQL(SQL_TABLE_STUDENTS);
+       // sqLiteDatabase.execSQL(SQL_TABLE_RESULTS);
 
     }
 
@@ -70,35 +87,58 @@ public class SqliteHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_USERS);
     }
 
-    public void addNote(Note note) {
+    public void addStudent(Student student) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
 
-        values.put(KEY_NAME, note.name);
-
-        values.put(KEY_DESCRIPTION, note.description);
-        values.put(KEY_MODIFIEDDATE, note.date);
-        db.insert(TABLE_NOTES, null, values);
+        values.put(KEY_NAME, student.name);
+        values.put(KEY_ROLL, student.roll);
+        values.put(KEY_CLASS, student.clas);
+        values.put(KEY_BATCH, student.batch);
+        values.put(KEY_DEPARTMENT, student.dept);
+        values.put(KEY_ADDRESS, student.address);
+        db.insert(TABLE_STUDENTS, null, values);
     }
 
-    public Cursor retriveAllNotesCursor() {
+    public Cursor retriveAllStudentsCursor() {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cur =  db.rawQuery( "select rowid as _id,"+KEY_NAME+","+KEY_DESCRIPTION+","+KEY_MODIFIEDDATE+" from "+ TABLE_NOTES, null);
+        Cursor cur =  db.rawQuery( "select rowid as _id,"+KEY_NAME+","+KEY_ROLL +","
+                +KEY_CLASS +","+KEY_BATCH +","+KEY_DEPARTMENT +","
+                +KEY_ADDRESS +" from "+ TABLE_STUDENTS, null);
+        return cur;
+    }
+    public void addResult(Results results) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(KEY_NAME, results.name);
+        values.put(KEY_ROLL, results.roll);
+        values.put(KEY_CLASS, results.exam);
+        values.put(KEY_BATCH, results.year);
+        values.put(KEY_DEPARTMENT, results.cgpa);
+        values.put(KEY_ADDRESS, results.position);
+        db.insert(TABLE_RESULTS, null, values);
+    }
+
+    public Cursor retriveAllResultsCursor() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cur =  db.rawQuery( "select rowid as _id,"+KEY_NAME+","+KEY_ROLL +","
+                +KEY_EXAM +","+KEY_YEAR +","+KEY_GPA +","
+                +KEY_POSITION +" from "+ TABLE_RESULTS, null);
         return cur;
     }
     public void addUser(User user) {
 
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
-
         values.put(KEY_EMAIL, user.email);
-
         values.put(KEY_PASSWORD, user.password);
-
         long todo_id = db.insert(TABLE_USERS, null, values);
     }
 

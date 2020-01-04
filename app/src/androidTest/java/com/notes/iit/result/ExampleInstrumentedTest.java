@@ -1,4 +1,4 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

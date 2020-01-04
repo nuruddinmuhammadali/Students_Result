@@ -1,4 +1,4 @@
-package com.notes.iit.simplenotesmanager;
+package com.notes.iit.result;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,33 +9,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-public class NotesListActivity extends AppCompatActivity {
-    FloatingActionButton noteEditOpenButton;
+import com.notes.iit.result.R;
+
+public class StudentsList extends AppCompatActivity {
+    public static FloatingActionButton noteEditOpenButton;
     FloatingActionButton profileUpdateButton;
     ListView listView;
     SqliteHelper sqliteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notes_list);
+        setContentView(R.layout.activity_students_list);
         initalizeViews();
         noteEditOpenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(NotesListActivity.this, ListEditActivity.class);
+                Intent intent=new Intent(StudentsList.this, ListEditActivity.class);
                 startActivity(intent);
             }
         });
         profileUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(NotesListActivity.this, ProfileUpdate.class);
+                Intent intent=new Intent(StudentsList.this, ProfileUpdate.class);
                 startActivity(intent);
             }
         });
         sqliteHelper=new SqliteHelper(this);
-        Cursor cursor= sqliteHelper.retriveAllNotesCursor();
-        CursorAdapter cursorAdapter=new NotesListAdapter(this,cursor);
+        Cursor cursor= sqliteHelper.retriveAllStudentsCursor();
+        CursorAdapter cursorAdapter=new StudentsListAdapter(this,cursor);
         listView.setAdapter(cursorAdapter);
     }
 

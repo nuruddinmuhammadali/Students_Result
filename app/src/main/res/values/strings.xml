@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Note Manager</string>
+    <string name="app_name">Students_Result</string>
     <string name="create_account"><font color="#00ff00">text</font></string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -7,9 +7,17 @@
     <string name="username">Username</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
-    <string name="back_to_notes_list">Back to Notes List</string>
-    <string name="add_notes">Add Notes</string>
+    <string name="back_to_stu_list">Back to Notes List</string>
+    <string name="add_notes">Add Student</string>
     <string name="profile_update">Update Profile</string>
-    <string name="save">Save Note</string>
-    <string name="noteSaved">The Note Saved Successfully.</string>
+    <string name="save">Save Student Info</string>
+    <string name="noteSaved">The Student Info Saved Successfully.</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

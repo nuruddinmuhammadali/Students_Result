@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="top"
+    android:gravity="center"
+    tools:context="com.notes.iit.result.MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PGDIT DU"
+        android:textSize="42dp"
+        android:textColor="#2196F3"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:textAlignment="center"
+        android:width="190dp"
+        android:height="89dp"
+        android:textStyle="bold"
+        android:text="Students Portal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent" />
+   <Button
+       android:id="@+id/btnAll"
+       android:textSize="27dp"
+       android:width="280dp"
+       android:height="80dp"
+       android:background="#009688"
+       android:textColor="#FF9800"
+       android:textStyle="bold"
+       android:layout_marginBottom="10dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="View All"/>
+    <Button
+        android:id="@+id/btnSearch"
+        android:textSize="27dp"
+        android:width="280dp"
+        android:height="80dp"
+        android:background="#009688"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"/>
+    <Button
+        android:id="@+id/btnLog"
+        android:textSize="29dp"
+        android:width="280dp"
+        android:height="80dp"
+        android:background="#009688"
+        android:textColor="#FF9800"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"/>
+</LinearLayout>
