@@ -104,7 +104,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public Cursor retriveAllStudentsCursor() {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cur =  db.rawQuery( "select rowid as _id,"+KEY_NAME+","+KEY_ROLL +","
+        Cursor cur =  db.rawQuery( "select rowid as _id,"
+                +KEY_NAME+","+KEY_ROLL +","
                 +KEY_CLASS +","+KEY_BATCH +","+KEY_DEPARTMENT +","
                 +KEY_ADDRESS +" from "+ TABLE_STUDENTS, null);
         return cur;

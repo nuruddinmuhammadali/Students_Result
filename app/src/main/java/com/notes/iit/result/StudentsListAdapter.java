@@ -22,14 +22,14 @@ public class StudentsListAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-    //    TextView stid = (TextView) view.findViewById(R.id.stuId);
+        //TextView stid = (TextView) view.findViewById(R.id.stuId);
         TextView stname = (TextView) view.findViewById(R.id.stuName);
         TextView stroll = (TextView) view.findViewById(R.id.stuRoll);
         TextView clas = (TextView) view.findViewById(R.id.stuClas);
         TextView batch = (TextView) view.findViewById(R.id.stuBatch);
         TextView dept = (TextView) view.findViewById(R.id.stuDept);
         TextView address = (TextView) view.findViewById(R.id.stuAddress);
-//        String stuid = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_ID));
+       // String stuid = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_ID));
         String stuname = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_NAME));
         String sturoll = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_ROLL));
         String stuclas = cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_CLASS));
@@ -38,7 +38,7 @@ public class StudentsListAdapter extends CursorAdapter {
         String stuaddres=cursor.getString(cursor.getColumnIndexOrThrow(SqliteHelper.KEY_ADDRESS));
         String preview="";
 
-     //   stid.setText(stuid);
+       // stid.setText(stuid);
         stname.setText(stuname);
         stroll.setText(sturoll);
         clas.setText(stuclas);

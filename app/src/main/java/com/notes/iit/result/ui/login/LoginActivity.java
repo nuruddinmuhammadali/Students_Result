@@ -117,6 +117,8 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString().equals("123456")){
                     String welcome = getString(R.string.welcome);// + model.getDisplayName();
                     // TODO : initiate successful logged in experience
+                    usernameEditText.setText("");
+                    passwordEditText.setText("");
                     Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
                     Intent i = new Intent(getApplicationContext(), StudentsList.class);
                     startActivity(i);

@@ -51,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), StudentsList.class);
                 startActivity(i);
                // flt.setVisibility(View.INVISIBLE);
-                if(StudentsList.noteEditOpenButton != null)
-                {
-                   // StudentsList.noteEditOpenButton.setVisibility(View.INVISIBLE);
-                }
 
+
+              //  FloatingActionButton floatingActionButton = ((StudentsList) getActivity()).getFloatingActionButton();
+
+//                if (floatingActionButton != null) {
+//                    floatingActionButton.hide();
+//                }
             }
         });
 

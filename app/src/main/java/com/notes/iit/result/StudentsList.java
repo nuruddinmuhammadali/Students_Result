@@ -12,7 +12,7 @@ import android.widget.ListView;
 import com.notes.iit.result.R;
 
 public class StudentsList extends AppCompatActivity {
-    public static FloatingActionButton noteEditOpenButton;
+    FloatingActionButton noteEditOpenButton;
     FloatingActionButton profileUpdateButton;
     ListView listView;
     SqliteHelper sqliteHelper;
@@ -40,10 +40,13 @@ public class StudentsList extends AppCompatActivity {
         CursorAdapter cursorAdapter=new StudentsListAdapter(this,cursor);
         listView.setAdapter(cursorAdapter);
     }
-
     private void initalizeViews() {
         noteEditOpenButton=(FloatingActionButton)findViewById(R.id.fab);
         profileUpdateButton=(FloatingActionButton)findViewById(R.id.profileID);
         listView=(ListView)findViewById(R.id.list);
+    }
+
+    public FloatingActionButton getNoteEditOpenButton() {
+        return noteEditOpenButton;
     }
 }
