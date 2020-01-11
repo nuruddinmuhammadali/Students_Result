@@ -1,6 +1,8 @@
 package com.notes.iit.result;
 
 import android.content.Intent;
+import android.support.annotation.RestrictTo;
+import android.support.annotation.VisibleForTesting;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,13 +20,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+      setContentView(R.layout.activity_main);
 
 
         btnal = (Button)  findViewById(R.id.btnAll);
         btnSrc = (Button)  findViewById(R.id.btnSearch);
         btnLg = (Button)  findViewById(R.id.btnLog);
-        flt = (FloatingActionButton)  findViewById(R.id.fab);
         btnLg.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -50,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 Intent i = new Intent(getApplicationContext(), StudentsList.class);
                 startActivity(i);
-               // flt.setVisibility(View.INVISIBLE);
+                StudentsList studentsList= new StudentsList();
+                //studentsList.noteEditOpenButton.setVisibility(View.GONE);
 
-
-              //  FloatingActionButton floatingActionButton = ((StudentsList) getActivity()).getFloatingActionButton();
+                //  FloatingActionButton floatingActionButton = ((StudentsList) getActivity()).getFloatingActionButton();
 
 //                if (floatingActionButton != null) {
 //                    floatingActionButton.hide();

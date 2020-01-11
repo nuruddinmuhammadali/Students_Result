@@ -11,7 +11,9 @@
     <string name="add_notes">Add Student</string>
     <string name="profile_update">Update Profile</string>
     <string name="save">Save Student Info</string>
+    <string name="allInfo">View All Info</string>
     <string name="noteSaved">The Student Info Saved Successfully.</string>
+    <string name="warn">Not Saved, Please Fill All Field.</string>
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>

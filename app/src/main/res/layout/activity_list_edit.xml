@@ -10,27 +10,26 @@
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="Student Name"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginBottom="12dp"
-        android:background="@android:color/transparent"
+        android:background="#EBEECA"
         />
     </android.support.design.widget.TextInputLayout>
-
     <android.support.design.widget.TextInputLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
     <EditText
         android:id="@+id/roll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="Student Roll"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginBottom="12dp"
-        android:background="@android:color/transparent"
+        android:background="#EBEECA"
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -40,12 +39,12 @@
     <EditText
         android:id="@+id/clas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="Class"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginBottom="12dp"
-        android:background="@android:color/transparent"
+        android:background="#EBEECA"
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -55,12 +54,12 @@
     <EditText
         android:id="@+id/batch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="Batch"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginBottom="12dp"
-        android:background="@android:color/transparent"
+        android:background="#EBEECA"
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -70,12 +69,12 @@
     <EditText
         android:id="@+id/dept"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:hint="Department"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_marginBottom="12dp"
-        android:background="@android:color/transparent"
+        android:background="#EBEECA"
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -92,7 +91,7 @@
             android:hint="Student Address"
             android:gravity="top|left"
             android:scrollbars="vertical"
-            android:background="@android:color/transparent"
+        android:background="#EBEECA"
             />
     </android.support.design.widget.TextInputLayout>
 </LinearLayout>

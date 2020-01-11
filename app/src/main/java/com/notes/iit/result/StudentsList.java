@@ -12,14 +12,17 @@ import android.widget.ListView;
 import com.notes.iit.result.R;
 
 public class StudentsList extends AppCompatActivity {
-    FloatingActionButton noteEditOpenButton;
+   public static FloatingActionButton noteEditOpenButton;
     FloatingActionButton profileUpdateButton;
     ListView listView;
     SqliteHelper sqliteHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_students_list);
+setContentView(R.layout.activity_students_list);
+        noteEditOpenButton=(FloatingActionButton)findViewById(R.id.fab);
+
         initalizeViews();
         noteEditOpenButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +44,6 @@ public class StudentsList extends AppCompatActivity {
         listView.setAdapter(cursorAdapter);
     }
     private void initalizeViews() {
-        noteEditOpenButton=(FloatingActionButton)findViewById(R.id.fab);
         profileUpdateButton=(FloatingActionButton)findViewById(R.id.profileID);
         listView=(ListView)findViewById(R.id.list);
     }

@@ -1,5 +1,6 @@
 package com.notes.iit.result;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,6 +8,8 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +24,7 @@ public class ListEditActivity extends AppCompatActivity {
     EditText name,roll,clas,batch,dept,address;
     TextView dateModified;
     TextView characterCount;
+    Button sample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,11 +80,26 @@ public class ListEditActivity extends AppCompatActivity {
                 String currentDateTime=simpleDateFormat.format(date);
                 Student student=new
                         Student(name.getText().toString(),roll.getText().toString(),clas.getText().toString(),batch.getText().toString(),dept.getText().toString(),address.getText().toString());
-                sqliteHelper.addStudent(student);
+                if(name.getText().toString().isEmpty() || roll.getText().toString().isEmpty()  || clas.getText().toString().isEmpty()
+                        || batch.getText().toString().isEmpty() || dept.getText().toString().isEmpty() || address.getText().toString().isEmpty()){
+                    String warning = getString(R.string.warn);// + model.getDisplayName();
+                    // TODO : initiate successful logged in experience
+                    Toast.makeText(getApplicationContext(), warning, Toast.LENGTH_SHORT).show();
+                }
+                    else{
+                            sqliteHelper.addStudent(student);
 //                dateModified.setText(currentDateTime);
+                name.setText("");   roll.setText("");   clas.setText("");
+                batch.setText("");   dept.setText("");   address.setText("");
+                name.requestFocus();
                 String welcome = getString(R.string.noteSaved);// + model.getDisplayName();
                 // TODO : initiate successful logged in experience
-                Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();}
+                break;
+            case R.id.vall:
+
+                        Intent i = new Intent(getApplicationContext(), StudentsList.class);
+                        startActivity(i);
                 break;
         }
         return super.onOptionsItemSelected(item);
